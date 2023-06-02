@@ -1,10 +1,10 @@
-import getDate from "../../utils/getDate";
-import useGetTime from "../../hooks/use-getTime";
+import getDate from "../../../utils/getDate";
+import useGetTime from "../../../hooks/use-getTime";
 
 const ListInfo = (props) => {
     const date = getDate();
     const { time } = useGetTime();
-    const classActive = "text-[#ff1ed2]";
+
     const filterHandler = (e) => {
         const filter = e.target.id;
         props.onGetFilter(filter);
@@ -16,14 +16,26 @@ const ListInfo = (props) => {
                     <div>{time}</div>
                     <div>{date}</div>
                 </div>
-                <div className="flex flex-wrap gap-5 content-center">
-                    <button id="all" onClick={filterHandler}>
+                <div className="actions flex flex-wrap gap-5 content-center">
+                    <button
+                        className="hover:text-[#ff1ed2]"
+                        id="all"
+                        onClick={filterHandler}
+                    >
                         All
                     </button>
-                    <button id="active" onClick={filterHandler}>
+                    <button
+                        className="hover:text-[#ff1ed2]"
+                        id="active"
+                        onClick={filterHandler}
+                    >
                         Active
                     </button>
-                    <button id="completed" onClick={filterHandler}>
+                    <button
+                        className="hover:text-[#ff1ed2]"
+                        id="completed"
+                        onClick={filterHandler}
+                    >
                         Completed
                     </button>
                 </div>
