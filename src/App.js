@@ -1,8 +1,12 @@
+import MainNavigation from "./components/Navigation/MainNavigation";
+import List from "./components/ToDoList/List";
+
 function App() {
     return (
-        <div className="text-center">
-            <h1 className="text-3xl font-bold">A happy place</h1>
-        </div>
+        <>
+            <MainNavigation />
+            <List />
+        </>
     );
 }
 
