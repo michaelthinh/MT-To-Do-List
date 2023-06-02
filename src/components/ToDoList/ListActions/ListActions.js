@@ -31,13 +31,15 @@ export default function ListActions() {
     };
     return (
         <div className="border-t-2 border-[#7a4b4b] p-4 ">
-            <button
-                className="block bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 "
-                type="button"
-                onClick={() => setShowModal(true)}
-            >
-                Add new things to do
-            </button>
+            <div className="text-center">
+                <button
+                    className="text-center bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 "
+                    type="button"
+                    onClick={() => setShowModal(true)}
+                >
+                    Add new things to do
+                </button>
+            </div>
             {showModal ? (
                 <form>
                     <div className="justify-center items-center flex w-2xl  fixed inset-0 z-50  focus:outline-none">
@@ -69,7 +71,7 @@ export default function ListActions() {
                                     <input
                                         name="todo"
                                         id="todo"
-                                        className="w-full p-2"
+                                        className="w-full p-2 focus:outline-none"
                                         placeholder="Enter your job here"
                                         defaultValue=""
                                         onChange={inputChangeHandler}

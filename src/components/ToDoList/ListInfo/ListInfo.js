@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { todoActions } from "../../../store/todoSlice";
+
 import getDate from "../../../utils/getDate";
 import useGetTime from "../../../hooks/use-getTime";
 
@@ -5,9 +8,11 @@ const ListInfo = (props) => {
     const date = getDate();
     const { time } = useGetTime();
 
+    const dispatch = useDispatch();
+
     const filterHandler = (e) => {
         const filter = e.target.id;
-        props.onGetFilter(filter);
+        dispatch(todoActions.sortByFilter(filter));
     };
     return (
         <div className="border-b-2 border-[#7a4b4b] p-4 ">

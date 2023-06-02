@@ -26,6 +26,12 @@ const TodoSlice = createSlice({
             });
             state.filteredItems = state.items;
         },
+        deleteTodo(state, action) {
+            const idFound = action.payload;
+            const newItems = state.items.filter((item) => item.id !== idFound);
+            state.items = newItems;
+            state.filteredItems = state.items;
+        },
         sortByFilter(state, actions) {
             const filterData = actions.payload;
             if (filterData === "active") {
